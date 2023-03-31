@@ -1,0 +1,70 @@
+<div class="container p-4">
+  <section >
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Registration</h2>
+
+                <form #RegData="ngForm"   (ngSubmit)="Submit(RegData.value)" ngNativeValidate>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="firstName" class="form-control" [maxLength]="30" [minLength]="2" oninvalid="this.setCustomValidity('Enter Your First name Here')"
+                           oninput="this.setCustomValidity('')" ngModel required />
+                    <label class="form-label" name="firstName">First Name</label>
+                  </div>
+
+
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="lastName" class="form-control" [maxLength]="30" [minLength]="2" oninvalid="this.setCustomValidity('Enter Your Last name Here')"
+                           oninput="this.setCustomValidity('')" ngModel placeholder="Optional"/>
+                    <label class="form-label" name="lastName">Last Name</label>
+                  </div>
+
+
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="tp" class="form-control"  [minLength]="9" maxlength="10" oninvalid="this.setCustomValidity('Enter a Valid Phone number')"
+                           oninput="this.setCustomValidity('')" ngModel required/>
+                    <label class="form-label" name="tp">Phone</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" name="username" class="form-control" [minLength]="7" maxlength="30" oninvalid="this.setCustomValidity('Enter a Valid Email Address')"
+                           oninput="this.setCustomValidity('')" ngModel required/>
+                    <label class="form-label" name="username">Email</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" name="password" id="Password" class="form-control" placeholder="At least 8 digits long" maxlength="16" [minLength]="8" oninvalid="this.setCustomValidity('Your Password should have at lest 8 digits and not more than 16')"
+                           oninput="this.setCustomValidity('')" ngModel required/>
+                    <label class="form-label" name="password">Password</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="RepeatPw" class="form-control" (keyup)="VerifyPasswords()" required/>
+                    <label class="form-label" for="RepeatPw">Re-type password</label><span id='message'></span>
+                  </div>
+
+
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" [disabled]="status"
+                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" >Register</button>
+                  </div>
+
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/Login"
+                                                                                          class="fw-bold text-body"><u>Login here</u></a></p>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
