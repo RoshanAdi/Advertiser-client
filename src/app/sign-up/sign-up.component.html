@@ -27,15 +27,15 @@
 
 
                   <div class="form-outline mb-4">
-                    <input type="text" name="tp" class="form-control"  [minLength]="9" maxlength="10" oninvalid="this.setCustomValidity('Enter a Valid Phone number')"
+                    <input type="text" name="phone" class="form-control"  [minLength]="9" maxlength="10" oninvalid="this.setCustomValidity('Enter a Valid Phone number')"
                            oninput="this.setCustomValidity('')" ngModel required/>
-                    <label class="form-label" name="tp">Phone</label>
+                    <label class="form-label" >Phone</label>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="email" name="username" class="form-control" [minLength]="7" maxlength="30" oninvalid="this.setCustomValidity('Enter a Valid Email Address')"
+                    <input type="email" name="email" class="form-control" [minLength]="7" maxlength="30" oninvalid="this.setCustomValidity('Enter a Valid Email Address')"
                            oninput="this.setCustomValidity('')" ngModel required/>
-                    <label class="form-label" name="username">Email</label>
+                    <label class="form-label" >Email</label>
                   </div>
 
                   <div class="form-outline mb-4">
@@ -45,7 +45,7 @@
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="RepeatPw" class="form-control" (keyup)="VerifyPasswords()" required/>
+                    <input type="password" id="RepeatPw" class="form-control" (keyup)="VerifyPasswords()" required/>
                     <label class="form-label" for="RepeatPw">Re-type password</label><span id='message'></span>
                   </div>
 

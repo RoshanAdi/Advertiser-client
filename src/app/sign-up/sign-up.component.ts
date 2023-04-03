@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NgForm} from "@angular/forms";
+import {RegisterService} from "../Services/register.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -7,6 +8,10 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+
+  constructor(private registerService:RegisterService) {
+  }
+
   status: boolean | undefined;
   VerifyPasswords() {
     // @ts-ignore
@@ -27,8 +32,8 @@ export class SignUpComponent {
 
 
   Submit(RegData: NgForm) {
-
-
+    console.log(RegData)
+this.registerService.register(RegData)
 
   }
 }

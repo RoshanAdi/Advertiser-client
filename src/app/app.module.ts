@@ -6,8 +6,11 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {FormsModule} from "@angular/forms";
 import {AlertModule} from "ngx-bootstrap/alert";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
+import { ProfileComponent } from './profile/profile.component';
+import { AppRoutingModule } from './app-routing.module';
+import {AuthInterceptor} from "./JwtTokenSetup/_helpers/auth.interceptor";
 
 const routes: Routes=[
   {path:'login',component:LoginComponent},
@@ -17,13 +20,18 @@ const routes: Routes=[
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProfileComponent
   ],
     imports: [AlertModule.forRoot(),RouterModule.forRoot(routes),
         BrowserModule,
-        FormsModule,HttpClientModule,
+        FormsModule,HttpClientModule, AppRoutingModule,
     ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
