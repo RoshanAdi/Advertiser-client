@@ -1,0 +1,88 @@
+<div style="padding-top: 35px"></div>
+<div style="padding-left: 20px;padding-right: 20px" >
+  <div class="container">
+    <div class="main-body">
+
+
+
+      <div class="row gutters-sm" >
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                <div class="mt-3">
+                  <h4>{{firstName}}</h4>
+                  <p class="text-secondary mb-1">{{role}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <form #UpdateData="ngForm"  (ngSubmit)="Update(UpdateData.value)" >
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">First Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary" *ngIf="HideDetails">
+                    {{firstName}}
+                  </div>
+                  <input class="col-sm-9 text-secondary" *ngIf="ShowInputFields" name = "firstName" ngModel="{{firstName}}" required>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+
+                    <h6 class="mb-0">Last Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary" *ngIf="HideDetails">
+                    {{lastName}}
+                  </div>
+
+                <input class="col-sm-9 text-secondary" *ngIf="ShowInputFields" name = "lastName" ngModel="{{lastName}}" required>
+
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" *ngIf="HideDetails">
+                  {{email}}
+                </div>
+                <input class="col-sm-9 text-secondary" *ngIf="ShowInputFields" name = "email" ngModel="{{email}}" required>
+              </div>
+
+                <hr>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{phone}}
+                  </div>
+
+                </div>
+                <hr>
+
+                <div class="row">
+                  <div class="col-sm-12" *ngIf="HideDetails">
+                    <a class="btn btn-success " target="__blank" (click)="LoadEdit()">Edit</a>
+                  </div>
+                  <div class="col-sm-12" *ngIf="ShowInputFields">
+                    <button type="submit"
+                            class="btn btn-success " >Save</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
