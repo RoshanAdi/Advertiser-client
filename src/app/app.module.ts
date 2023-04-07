@@ -11,6 +11,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { ProfileComponent } from './profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import {AuthInterceptor} from "./JwtTokenSetup/_helpers/auth.interceptor";
+import { CheckoutComponent } from './Checkout/checkout/checkout.component';
 
 const routes: Routes=[
   {path:'login',component:LoginComponent},
@@ -21,7 +22,8 @@ const routes: Routes=[
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    ProfileComponent
+    ProfileComponent,
+    CheckoutComponent
   ],
     imports: [AlertModule.forRoot(),RouterModule.forRoot(routes),
         BrowserModule,

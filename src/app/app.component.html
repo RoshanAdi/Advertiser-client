@@ -2,9 +2,12 @@
 
 <div class="topnav">
   <a class="active" href="">Home</a>
-  <div class="topnav-right">
+  <div class="topnav-right" *ngIf="authService.isLoggedIn()">
     <a routerLink="/login">Login</a>
     <a routerLink="/register">Register</a>
+  </div>
+  <div class="topnav-right" *ngIf="!authService.isLoggedIn()">
+    <a (click)="logOut()">Log-out</a>
   </div>
 </div>
 <router-outlet></router-outlet>
